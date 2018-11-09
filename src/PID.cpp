@@ -1,5 +1,6 @@
 #include "PID.h"
 
+
 using namespace std;
 
 /*
@@ -23,9 +24,10 @@ void PID::Init(double Kp, double Ki, double Kd) {
 
 void PID::UpdateError(double cte) {
 	// check if first update
-	if (p_error == 0.0) {
+	if (!init) {
 		p_error = cte;
 		i_error += cte;
+		init = true;
 	}
 	else {
 		d_error = cte - p_error;

@@ -3,6 +3,9 @@
 
 class PID {
 public:
+  // variable to check for first calculation
+  bool init = false;
+
   /*
   * Errors
   */
